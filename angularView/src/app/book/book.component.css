@@ -1,0 +1,20 @@
+#container {
+    display: inline-block;
+    padding: 15px 25px 35px;
+    line-height: 2.5;
+    letter-spacing: 1.2;
+    background-color: #ffffffb2;
+    border-radius: 5px;
+    box-shadow: #0000001a 0px 4px 12px;
+    position: relative;
+    width: 300px;
+    min-height: 200px;
+    color: #3f3e3e;
+    font-size: 15px;
+    margin: 10px;
+}
+
+label {
+    margin: 5px;
+    color: #000000;
+}

@@ -1,0 +1,20 @@
+<div id="searchField">
+    <mat-form-field class="example-form-field">
+        <mat-label>Search store name</mat-label>
+            <input matInput type="text" [(ngModel)]="value" (keydown.enter)="search(1)">
+            <button matSuffix mat-icon-button (click)="search(1)">
+                <mat-icon>search</mat-icon>
+            </button>
+    </mat-form-field>
+</div>
+
+<app-store 
+*ngFor="let store of stores.stores"
+    [store]='store'>
+</app-store>
+
+<mat-paginator [length]="stores.pages"
+               [pageSize]="stores.pages//10"
+               aria-label="Select page"
+               (page)="onPageChange($event)">
+</mat-paginator>

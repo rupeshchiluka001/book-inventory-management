@@ -1,0 +1,9 @@
+<div id="container">
+    <div><label>Book Name: </label>{{ book.bookName }}</div>
+    <div><label>Book API: </label>{{ book.bookApi }}</div>
+    <div><label>Copies: </label>{{ book.copies }}</div>
+    <div><label>In Stock: </label>{{ inStock }}</div>
+
+    <button mat-raised-button color="warn" (click)="deleteBook()">Delete Book</button> <br>
+    <button mat-raised-button color="accent" [routerLink]="['/edit-book', book._id]">Edit Book</button>
+</div>

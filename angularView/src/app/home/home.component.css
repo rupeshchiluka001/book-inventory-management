@@ -1,0 +1,11 @@
+#searchField {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-form-field {
+    width: min(500px, 70%);
+    margin: 3px;
+}

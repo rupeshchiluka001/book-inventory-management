@@ -1,0 +1,12 @@
+<div class="container" id="container">
+    <div><label>Store Name: </label>{{ store.storeName }}</div>
+    <div><label>Owner Name: </label>{{ store.ownerName }}</div>
+    <div><label>Address: </label>{{ store.address }}</div>
+
+    <button mat-raised-button (click)="addNewForm()">New Book</button>
+</div>
+
+<app-book 
+*ngFor="let book of books"
+    [book]='book'>
+</app-book>

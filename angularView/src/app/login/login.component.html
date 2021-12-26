@@ -1,0 +1,30 @@
+<h1 class="text-center display-1">Login Form</h1>
+
+<div class="container mb-5" id="container">
+    <img src="../../assets/images/login.svg" alt="Login Image">
+
+    <form [formGroup]="loginForm">
+        <mat-form-field>
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="abc@example.com" formControlName="email" required>
+            <mat-error *ngIf="loginForm.controls['email'].status=='INVALID'">Enter correct email address</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <mat-hint>Minimum 8 characters</mat-hint>
+            <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            <mat-error *ngIf="loginForm.controls['password'].status=='INVALID'">Min. password length should be 8</mat-error>
+        </mat-form-field>
+        <br>
+        
+        <div id="center">
+            <button (click)="submitForm()" mat-raised-button [disabled]="loginForm.status!=='VALID'">
+                Sign In
+                <input type="submit" hidden>
+            </button>
+        </div>
+    </form>
+</div>

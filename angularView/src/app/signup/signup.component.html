@@ -1,0 +1,49 @@
+<h1 class="text-center display-1">Registration Form</h1>
+
+<div class="container mb-5" id="container">
+    <form [formGroup]="signupForm">
+        <mat-form-field>
+            <mat-label>Enter your Full Name</mat-label>
+            <input matInput formControlName="ownerName" required>
+            <mat-error *ngIf="signupForm.controls['ownerName'].status=='INVALID'">Your name is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="abc@example.com" formControlName="email" required>
+            <mat-error *ngIf="signupForm.controls['email'].status=='INVALID'">Enter correct email address</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <mat-hint>Minimum 8 characters</mat-hint>
+            <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            <mat-error *ngIf="signupForm.controls['password'].status=='INVALID'">Minimum 8 characters</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <mat-label>Enter your Book store name</mat-label>
+            <input matInput formControlName="storeName" required>
+            <mat-error *ngIf="signupForm.controls['storeName'].status=='INVALID'">Store name is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <mat-label>Enter your Book store address</mat-label>
+            <input matInput formControlName="address" required>
+            <mat-error *ngIf="signupForm.controls['address'].status=='INVALID'">address is required</mat-error>
+        </mat-form-field>
+        <br>
+        
+        <div id="center">
+            <button (click)="submitForm()" mat-raised-button [disabled]="signupForm.status!=='VALID'">
+                Sign Up
+                <input type="submit" hidden>
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <mat-icon class="cursor" [routerLink]="''">home</mat-icon>
+
+  <span class="cursor" [routerLink]="''">Home</span>
+  
+  <span class="spacer"></span>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button *ngIf="id" mat-menu-item [routerLink]="['/my-store']">My Store</button>
+      <button mat-menu-item [routerLink]="['/login']">Login</button>
+      <button mat-menu-item [routerLink]="['/logout']" (click)="logout()">Logout</button>
+      <button mat-menu-item [routerLink]="['/signup']">Signup</button>
+  </mat-menu>      
+</mat-toolbar>
+<router-outlet></router-outlet>
